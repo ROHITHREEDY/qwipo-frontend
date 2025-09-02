@@ -1,0 +1,72 @@
+.App {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+  padding: 0 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.customer-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  grid-column: span 1;
+}
+
+button:hover {
+  background-color: #155a9c;
+}
+
+.message {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.message.error {
+  color: #d32f2f;
+}
+
+.message.success {
+  color: #388e3c;
+}
+
+.search-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.customer-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.customer-list li {
+  background: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
