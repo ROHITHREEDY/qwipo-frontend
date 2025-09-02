@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
 function App() {
   const [customers, setCustomers] = useState([]);
   const [formData, setFormData] = useState({
@@ -24,7 +26,7 @@ function App() {
 
   const fetchCustomers = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/customers');
+      const res = await axios.get(`${API_URL}/api/customers`);
       setCustomers(res.data);
       setMessage('');
       setMessageType('');
@@ -49,7 +51,7 @@ function App() {
     }
     setIsSubmitting(true);
     try {
-      await axios.post('http://localhost:5000/api/customers', formData);
+      await axios.post(`${API_URL}/api/customers`, formData);
       setMessage('Customer created successfully');
       setMessageType('success');
       setFormData({ firstName: '', lastName: '', phoneNumber: '', address: '', city: '', state: '', pinCode: '' });
